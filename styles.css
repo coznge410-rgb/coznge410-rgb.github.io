@@ -1,0 +1,580 @@
+/* CSS样式文件 - 为欢迎页和主页提供样式 */
+/* 对初学者来说，理解CSS选择器、盒模型和响应式设计是重点 */
+
+/* 全局样式重置和基础设置 */
+/* 通配符选择器(*)：选择页面上的所有元素 */
+* {
+    /* 重置所有元素的默认外边距 */
+    margin: 0;
+    /* 重置所有元素的默认内边距 */
+    padding: 0;
+    /* 盒模型设置：width和height包括内容、内边距和边框 */
+    box-sizing: border-box;
+}
+
+/* body元素样式 */
+/* 元素选择器：直接选择body标签 */
+body {
+    /* 设置字体族，优先使用Arial，如果不可用则使用微软雅黑 */
+    font-family: 'Arial', 'Microsoft YaHei', sans-serif;
+    /* 行高：文本行之间的距离，1.6是比较舒适的阅读体验 */
+    line-height: 1.6;
+    /* 文本颜色 */
+    color: #333;
+    /* 背景颜色 */
+    background-color: #f5f5f5;
+}
+
+/* 容器样式 */
+/* 类选择器：以点(.)开头，选择所有class="container"的元素 */
+.container {
+    /* 宽度：占父元素的100% */
+    width: 100%;
+    /* 最大宽度：防止在大屏幕上过宽 */
+    max-width: 1200px;
+    /* 水平居中：上下边距为0，左右自动（相等） */
+    margin: 0 auto;
+    /* 内边距：左右各20px，上下0 */
+    padding: 0 20px;
+}
+
+/* 欢迎页样式 */
+.welcome-container {
+    /* 最小高度：100vh表示视口高度的100% */
+    min-height: 100vh;
+    /* 弹性布局：使内容能够灵活排列 */
+    display: flex;
+    /* 垂直居中 */
+    align-items: center;
+    /* 水平居中 */
+    justify-content: center;
+    /* 背景渐变：从左上到右下的渐变背景 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 内边距 */
+    padding: 20px;
+}
+
+.welcome-content {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.welcome-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.welcome-content .highlight {
+    color: #667eea;
+}
+
+.welcome-content p {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* 表单样式 */
+.welcome-form {
+    /* 文本对齐：左对齐 */
+    text-align: left;
+}
+
+.form-group {
+    /* 下边距：表单组之间的距离 */
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    /* 显示方式：块级元素，独占一行 */
+    display: block;
+    /* 下边距：标签与输入框之间的距离 */
+    margin-bottom: 8px;
+    /* 字体粗细：粗体 */
+    font-weight: bold;
+    /* 颜色 */
+    color: #555;
+}
+
+.form-group input {
+    /* 宽度：占满父容器 */
+    width: 100%;
+    /* 内边距：输入框内部的空间 */
+    padding: 12px;
+    /* 边框：1像素宽的实线边框 */
+    border: 1px solid #ddd;
+    /* 边框圆角：使输入框有圆角效果 */
+    border-radius: 5px;
+    /* 字体大小：1rem = 16px（默认字体大小） */
+    font-size: 1rem;
+    /* 过渡效果：边框颜色变化时的动画时间 */
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    /* 移除默认的聚焦轮廓 */
+    outline: none;
+    /* 聚焦时的边框颜色 */
+    border-color: #667eea;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    /* 背景颜色 */
+    background: #667eea;
+    /* 文本颜色 */
+    color: white;
+    /* 无边框 */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    /* 鼠标指针：手型，表示可点击 */
+    cursor: pointer;
+    /* 背景颜色过渡效果 */
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    /* 鼠标悬停时的背景颜色 */
+    background: #5a67d8;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #667eea;
+}
+
+/* 主内容区域样式 */
+.main-content {
+    padding: 40px 0;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+/* 小组成员部分样式 */
+/* 这部分样式定义了小组主页中成员展示区域的外观 */
+.members-section {
+    background-color: #fff; /* 白色背景，与主内容区域形成对比 */
+    padding: 40px 0; /* 上下内边距40px，左右0px */
+    border-radius: 8px; /* 圆角边框，增加视觉美感 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* 轻微阴影效果，增加层次感 */
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px; /* 卡片之间的间距 */
+    margin-top: 30px; /* 与标题之间的距离 */
+    justify-items: center;
+}
+
+.member-card {
+    background: #f9f9f9; /* 浅灰色背景，区别于主背景 */
+    border-radius: 10px; /* 卡片圆角 */
+    overflow: hidden; /* 防止子元素溢出卡片 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* 中等强度阴影 */
+    /* 过渡动画：鼠标悬停时的变换效果 */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center; /* 卡片内容居中对齐 */
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+.member-card:hover {
+    /* 鼠标悬停时向上移动5px，创造悬浮效果 */
+    transform: translateY(-5px);
+    /* 鼠标悬停时增加阴影强度，增强视觉反馈 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.member-photo {
+    width: 160px;
+    height: 160px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 16px auto;
+}
+
+.photo-placeholder {
+    font-size: 1.2rem;
+    color: #888;
+    font-weight: 500;
+}
+
+/* 成员照片样式 */
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* 鼠标悬停时的照片效果 */
+.member-card:hover .member-image {
+    transform: scale(1.05);
+}
+
+/* 为照片容器添加溢出隐藏和过渡效果 */
+.member-photo {
+    width: 160px;
+    height: 160px;
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 16px auto;
+    transition: background-color 0.3s ease;
+}
+
+.member-info {
+    padding: 20px;
+}
+
+.member-info h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.member-info p {
+    color: #666;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+/* 欢迎页进入按钮样式 */
+.enter-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.enter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.enter-btn:active {
+    transform: translateY(0);
+}
+
+/* 响应式设计 - 小组成员部分 */
+@media (max-width: 768px) {
+    .members-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    
+    .member-photo {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .member-info {
+        padding: 15px;
+    }
+    
+    .member-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .member-info p {
+        font-size: 0.85rem;
+    }
+    
+    .enter-btn {
+        padding: 12px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .members-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .member-card {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .member-card-large .member-photo {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+.section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 2rem;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #667eea;
+    margin: 10px auto 0;
+}
+
+/* 小组介绍样式 */
+.intro-section {
+    background: white;
+    padding: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.intro-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.intro-content p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* 课程部分样式 */
+.courses-section {
+    background: #f8f9fa;
+    padding: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.course-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h3 {
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.course-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* 地图部分样式 */
+.map-section {
+    background: white;
+    padding: 40px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.map-container {
+    position: relative;
+}
+
+.map-controls {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.map-controls button,
+.map-controls select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.map-controls button:hover,
+.map-controls select:hover {
+    background: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+#mapContainer {
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.member-detail {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.member-card-large {
+    max-width: 900px;
+    width: 100%;
+    text-align: left;
+}
+
+.member-card-large .member-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin: 0 auto 16px;
+}
+
+.member-card-large .member-info {
+    padding: 24px;
+}
+
+.member-courses {
+    margin-top: 16px;
+}
+
+.member-courses h4 {
+    margin-bottom: 10px;
+    color: #667eea;
+}
+
+.courses-list {
+    list-style: disc;
+    padding-left: 20px;
+    color: #555;
+}
+
+/* 页脚样式 */
+.footer {
+    background: #333;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+}
+
+/* 响应式设计 */
+/* 媒体查询：根据屏幕宽度应用不同的样式 */
+/* max-width: 768px 表示屏幕宽度小于等于768px时应用 */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* 在移动设备上隐藏导航链接，可以后续添加汉堡菜单 */
+    }
+    
+    .welcome-content {
+        padding: 30px 20px;
+    }
+    
+    .welcome-content h1 {
+        font-size: 2rem;
+    }
+    
+    .courses-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-controls {
+        flex-wrap: wrap;
+    }
+    
+    #mapContainer {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section h2 {
+        font-size: 1.5rem;
+    }
+    
+    #mapContainer {
+        height: 300px;
+    }
+}
