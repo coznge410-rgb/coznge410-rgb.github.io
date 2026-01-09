@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- DOCTYPE声明：告诉浏览器这是HTML5文档 -->
+<html lang="zh-CN">
+<!-- html标签：HTML文档的根元素，lang属性指定页面语言为中文 -->
+<head>
+    <!-- head部分：包含文档的元数据（不会显示在页面上） -->
+    <meta charset="UTF-8">
+    <!-- 字符集声明：UTF-8支持世界上几乎所有的字符 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 视口设置：使页面在移动设备上正常显示 -->
+    <!-- width=device-width: 宽度等于设备屏幕宽度 -->
+    <!-- initial-scale=1.0: 初始缩放比例为1 -->
+    <title>小组主页 - 欢迎</title>
+    <!-- 页面标题：显示在浏览器标签页上 -->
+    
+    <!-- 引入外部CSS样式文件 -->
+    <!-- rel="stylesheet" 表示这是一个样式表 -->
+    <!-- href属性指定样式文件的路径 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- body部分：包含所有可见的页面内容 -->
+    
+    <!-- 欢迎页容器 -->
+    <!-- div标签：通用块级容器 -->
+    <!-- class属性：用于CSS选择器定位和样式应用 -->
+    <div class="welcome-container">
+        <!-- 欢迎信息 -->
+        <div class="welcome-content">
+            <!-- h1标签：一级标题，最重要的标题 -->
+            <!-- br标签：换行 -->
+            <!-- span标签：行内元素，用于对文本的一部分应用样式 -->
+            <h1>欢迎来到<br><span class="highlight">WebGIS 学习小组</span></h1>
+            <!-- p标签：段落文本 -->
+            <p>我们是一群热爱地理信息系统和Web开发的学习者</p>
+            
+            <!-- 进入主页按钮 -->
+            <!-- button标签：按钮元素 -->
+            <!-- id属性：唯一标识符，用于JavaScript选择 -->
+            <button id="enter-btn" class="enter-btn" onclick="window.location.href='main.html'">进入主页</button>
+        </div>
+    </div>
+
+    <!-- 引入外部JavaScript文件 -->
+    <!-- 注意：脚本放在body标签末尾，可以确保DOM加载完成后再执行JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
